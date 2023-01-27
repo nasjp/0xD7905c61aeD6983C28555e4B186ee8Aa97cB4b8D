@@ -13,8 +13,10 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@mapbox/rehype-prism": "^0.8.0",
 		"@sveltejs/adapter-auto": "^1.0.0",
 		"@sveltejs/kit": "^1.0.0",
+		"@types/mapbox__rehype-prism": "^0.8.0",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
 		"eslint": "^8.28.0",
@@ -22,12 +24,23 @@
 		"eslint-plugin-svelte3": "^4.0.0",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.8.1",
+		"prism-themes": "^1.9.0",
+		"rehype-stringify": "^9.0.3",
+		"remark-breaks": "^3.0.2",
+		"remark-emoji": "^3.0.2",
+		"remark-extract-frontmatter": "^3.2.0",
+		"remark-frontmatter": "^4.0.1",
+		"remark-gfm": "^3.0.1",
+		"remark-parse": "^10.0.1",
+		"remark-rehype": "^10.1.0",
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
 		"tslib": "^2.4.1",
 		"typescript": "^4.9.3",
+		"unified": "^10.1.2",
 		"vite": "^4.0.0",
-		"vitest": "^0.25.3"
+		"vitest": "^0.25.3",
+		"yaml": "^2.2.1"
 	},
 	"type": "module"
 }

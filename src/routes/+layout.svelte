@@ -1,6 +1,5 @@
 <main>
 	<div class="header">
-		<!-- <h1>かぜのもり</h1> -->
 		<h1>kazenomori</h1>
 		<ul>
 			<li>かぜのもりについて</li>
