@@ -1,9 +1,9 @@
 import type { RequestHandler } from './$types';
 
-import { getPosts } from '$lib/posts';
+import { getPostSummaries } from '$lib/posts';
 
 export const GET = (async () => {
-	const posts = await getPosts();
+	const postSummaries = await getPostSummaries();
 
-	return new Response(JSON.stringify(posts));
+	return new Response(JSON.stringify(postSummaries));
 }) satisfies RequestHandler;

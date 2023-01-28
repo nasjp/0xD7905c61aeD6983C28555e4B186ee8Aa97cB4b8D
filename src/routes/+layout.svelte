@@ -1,11 +1,11 @@
 <main>
 	<div class="header">
 		<h1>kazenomori</h1>
-		<ul>
-			<li>かぜのもりについて</li>
-			<li>ポートフォリオ</li>
-			<li>お問い合わせ</li>
-		</ul>
+		<nav>
+			<a href="/about">かぜのもりについて</a>
+			<a href="/about">ポートフォリオ</a>
+			<a href="/about">お問い合わせ</a>
+		</nav>
 
 		<slot />
 	</div>
@@ -23,10 +23,9 @@
 		font-weight: 300;
 	}
 
-	ul {
+	nav {
 		/* color: #19232d; */
 		color: #828c96;
-		cursor: pointer;
 		border-top: 1px solid;
 		border-bottom: 1px solid;
 		border-color: #dce6f0;
@@ -38,7 +37,7 @@
 		padding-top: 8px;
 	}
 
-	li {
+	a {
 		border-right: 1px solid;
 		border-color: #dce6f0;
 		display: grid;
@@ -46,9 +45,12 @@
 		list-style: none;
 		place-items: center normal;
 		padding-left: 8px;
+		color: inherit;
+		text-decoration: none;
+		cursor: pointer;
 	}
 
-	li:last-child {
+	a:last-child {
 		border: none;
 	}
 </style>

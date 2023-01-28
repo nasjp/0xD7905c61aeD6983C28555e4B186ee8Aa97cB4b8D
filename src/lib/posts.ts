@@ -42,7 +42,16 @@ export interface PostData extends PostDataSummary {
 
 let postsCache: PostData[];
 
-async function fetchPosts(): Promise<PostData[]> {
+const formatDate = (datetime: string): string => {
+	const date = new Date(datetime);
+	const y = date.getFullYear();
+	const m = (date.getMonth() + 1).toString().padStart(2, '0');
+	const d = date.getDate().toString().padStart(2, '0');
+
+	return `${y}-${m}-${d}`;
+};
+
+const fetchPosts = async (): Promise<PostData[]> => {
 	if (postsCache) {
 		return postsCache;
 	}
@@ -63,7 +72,7 @@ async function fetchPosts(): Promise<PostData[]> {
 				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-non-null-asserted-optional-chain
 				slug: fileName.match(/_(.+)\.md$/)?.[1]!,
 				title,
-				createdAt: created_at,
+				createdAt: formatDate(created_at),
 				content
 			};
 		});
@@ -79,14 +88,14 @@ async function fetchPosts(): Promise<PostData[]> {
 	});
 
 	return postsCache;
-}
+};
 
-export async function getPosts(): Promise<PostDataSummary[]> {
+export const getPostSummaries = async (): Promise<PostDataSummary[]> => {
 	const posts = await fetchPosts();
 	return posts.map(({ ...summary }) => summary);
-}
+};
 
-export async function getPost(slug: string): Promise<PostData | undefined> {
+export const getPost = async (slug: string): Promise<PostData | undefined> => {
 	const posts = await fetchPosts();
 	return posts.find((post) => post.slug === slug);
-}
+};
