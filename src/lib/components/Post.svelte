@@ -4,8 +4,11 @@
 	export let content: string;
 </script>
 
-<strong>{createdAt}</strong>
 <h3>{title}</h3>
+<p class="data">{createdAt}</p>
 <div class="content">
 	<p>{@html content}</p>
 </div>
+
+<style>
+</style>

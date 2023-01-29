@@ -6,7 +6,9 @@
 
 {#each data.postSummaries as { slug, title, createdAt }}
 	<a href={`/posts/${slug}`}>
-		<time>{createdAt}</time>
-		<h3>{title}</h3>
+		<div>
+			<h3>{title}</h3>
+			<p class="data">{createdAt}</p>
+		</div>
 	</a>
 {/each}
