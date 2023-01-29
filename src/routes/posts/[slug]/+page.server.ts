@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
-import { getPost } from '$lib/posts';
+import { getPost } from '$lib/usecases/posts';
 
 export const load = (async ({ params }) => {
 	const post = await getPost(params.slug);

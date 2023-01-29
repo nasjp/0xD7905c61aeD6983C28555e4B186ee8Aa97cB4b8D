@@ -1,14 +1,18 @@
 <script lang="ts">
-	export let title: string;
-	export let createdAt: string;
-	export let content: string;
+	import type { PostData, PostDataSummary } from '$lib/domains/post';
+	import { PostFrontMatter } from '$lib/components';
+	export let post: PostData;
+	$: frontMatter = { ...post } as PostDataSummary;
 </script>
 
-<h3>{title}</h3>
-<p class="data">{createdAt}</p>
+<PostFrontMatter {frontMatter} />
 <div class="content">
-	<p>{@html content}</p>
+	<div class="border" />
+	<p>{@html post.content}</p>
 </div>
 
 <style>
+	.border {
+		border-bottom: 1px solid;
+	}
 </style>

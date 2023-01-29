@@ -1,6 +1,6 @@
 import type { RequestHandler } from './$types';
 
-import { getPostSummaries } from '$lib/posts';
+import { getPostSummaries } from '$lib/usecases/posts';
 
 export const GET = (async () => {
 	const postSummaries = await getPostSummaries();

@@ -3,32 +3,32 @@
 </script>
 
 <div class="header">
-	<h1><a href="/">kazenomori</a></h1>
+	<h1><a href="/">>kazenomori</a></h1>
 	<nav>
 		<div class="navItem">
 			<a href="/about">
-				<span class="ruby data" class:here={$page.route.id === '/about'}>about</span>
+				<span class="ruby" class:here={$page.route.id === '/about'}>about</span>
 				<br />
 				<span>風森</span>
 			</a>
 		</div>
 		<div class="navItem">
 			<a href="/portfolio">
-				<span class="ruby data" class:here={$page.route.id === '/portfolio'}>portfolio</span>
+				<span class="ruby" class:here={$page.route.id === '/portfolio'}>portfolio</span>
 				<br />
 				<span>実装</span>
 			</a>
 		</div>
 		<div class="navItem">
 			<a href="/posts">
-				<span class="ruby data" class:here={$page.route.id === '/posts'}>posts</span>
+				<span class="ruby" class:here={$page.route.id === '/posts'}>posts</span>
 				<br />
 				<span>記事</span>
 			</a>
 		</div>
 		<div class="navItem">
 			<a href="/contact">
-				<span class="ruby data" class:here={$page.route.id === '/contact'}>contact</span>
+				<span class="ruby" class:here={$page.route.id === '/contact'}>contact</span>
 				<br />
 				<span>問合</span>
 			</a>

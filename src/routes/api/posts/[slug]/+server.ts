@@ -1,7 +1,7 @@
 import type { RequestHandler } from './$types';
 import { error } from '@sveltejs/kit';
 
-import { getPost } from '$lib/posts';
+import { getPost } from '$lib/usecases/posts';
 
 export const GET = (async ({ params }) => {
 	const post = await getPost(params.slug);

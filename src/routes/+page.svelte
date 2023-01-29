@@ -1,14 +1,21 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import { onDestroy } from 'svelte';
 
-	export let data: PageData;
+	import type { PageData } from './$types';
+	import { PostTitle } from '$lib/components';
+
+	let fullTxt = 'work in progress';
+	let cnt = 0;
+	$: txt = (() => {
+		if (cnt > fullTxt.length) {
+			return fullTxt + '.'.repeat(cnt % 4);
+		}
+		return fullTxt.slice(0, cnt);
+	})();
+
+	const interval = setInterval(() => (cnt += 1), 100);
+
+	onDestroy(() => clearInterval(interval));
 </script>
 
-{#each data.postSummaries as { slug, title, createdAt }}
-	<a href={`/posts/${slug}`}>
-		<div>
-			<h3>{title}</h3>
-			<p class="data">{createdAt}</p>
-		</div>
-	</a>
-{/each}
+<h1>{txt}</h1>

@@ -11,6 +11,7 @@ import emoji from 'remark-emoji';
 import remark2rehype from 'remark-rehype';
 import rehypePrism from '@mapbox/rehype-prism';
 import html from 'rehype-stringify';
+import type { PostData, PostDataSummary } from '../domains/post';
 
 const processor = unified()
 	.use(parse)
@@ -27,29 +28,14 @@ const postsDirectory = path.join(process.cwd(), 'posts');
 
 interface FrontMatter {
 	title: string;
+	category: string;
+	tags: string[];
 	created_at: string;
-}
-
-export interface PostDataSummary {
-	slug: string;
-	title: string;
-	createdAt: string;
-}
-
-export interface PostData extends PostDataSummary {
-	content: string;
+	updated_at: string;
+	published: boolean;
 }
 
 let postsCache: PostData[];
-
-const formatDate = (datetime: string): string => {
-	const date = new Date(datetime);
-	const y = date.getFullYear();
-	const m = (date.getMonth() + 1).toString().padStart(2, '0');
-	const d = date.getDate().toString().padStart(2, '0');
-
-	return `${y}-${m}-${d}`;
-};
 
 const fetchPosts = async (): Promise<PostData[]> => {
 	if (postsCache) {
@@ -65,14 +51,18 @@ const fetchPosts = async (): Promise<PostData[]> => {
 			const fileContents = await fs.readFile(fullPath, 'utf8');
 
 			const result = await processor.process(fileContents);
-			const { title, created_at } = result.data as unknown as FrontMatter;
+			const { title, category, tags, created_at, updated_at, published } =
+				result.data as unknown as FrontMatter;
 			const content = result.value.toString();
 
 			return {
 				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-non-null-asserted-optional-chain
 				slug: fileName.match(/_(.+)\.md$/)?.[1]!,
 				title,
-				createdAt: formatDate(created_at),
+				category: category ?? 'none',
+				tags: tags ?? [],
+				createdAt: new Date(created_at),
+				updatedAt: new Date(updated_at),
 				content
 			};
 		});
