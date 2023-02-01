@@ -16,6 +16,7 @@
 		"@jsdevtools/rehype-toc": "^3.0.2",
 		"@mapbox/rehype-prism": "^0.7.0",
 		"@sveltejs/adapter-auto": "^1.0.0",
+		"@sveltejs/adapter-vercel": "^1.0.6",
 		"@sveltejs/kit": "^1.0.0",
 		"@types/mapbox__rehype-prism": "^0.8.0",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
