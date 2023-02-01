@@ -8,3 +8,5 @@ export const load = (async () => {
 		postSummaries: postSummaries.length > 5 ? postSummaries.slice(0, 4) : postSummaries
 	};
 }) satisfies PageServerLoad;
+
+export const prerender = true;

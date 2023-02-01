@@ -6,3 +6,5 @@ export const load = (async () => {
 		postSummaries: await getPostSummaries()
 	};
 }) satisfies PageServerLoad;
+
+export const prerender = true;
