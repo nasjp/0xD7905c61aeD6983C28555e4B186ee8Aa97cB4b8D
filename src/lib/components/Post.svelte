@@ -7,12 +7,11 @@
 
 <PostFrontMatter {frontMatter} />
 <div class="content">
-	<div class="border" />
 	<p>{@html post.content}</p>
 </div>
 
 <style>
-	.border {
-		border-bottom: 1px solid;
+	.content {
+		margin-top: 23px;
 	}
 </style>

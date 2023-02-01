@@ -1,21 +1,14 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
-
 	import type { PageData } from './$types';
 	import { PostTitle } from '$lib/components';
 
-	let fullTxt = 'work in progress';
-	let cnt = 0;
-	$: txt = (() => {
-		if (cnt > fullTxt.length) {
-			return fullTxt + '.'.repeat(cnt % 4);
-		}
-		return fullTxt.slice(0, cnt);
-	})();
-
-	const interval = setInterval(() => (cnt += 1), 100);
-
-	onDestroy(() => clearInterval(interval));
+	export let data: PageData;
 </script>
 
-<h1>{txt}</h1>
+<h2>最新の記事({data.postSummaries.length}件)</h2>
+
+{#each data.postSummaries as { slug, title, createdAt }}
+	<a href={`/posts/${slug}`}>
+		<PostTitle {title} {createdAt} />
+	</a>
+{/each}

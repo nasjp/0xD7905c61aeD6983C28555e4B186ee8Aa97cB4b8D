@@ -1,3 +1,5 @@
-<div>
-	<h2>🚧WIP</h2>
-</div>
+<script lang="ts">
+	import { Unimplemented } from '$lib/components';
+</script>
+
+<Unimplemented />

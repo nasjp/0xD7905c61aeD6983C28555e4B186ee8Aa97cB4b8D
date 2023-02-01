@@ -1,9 +1,18 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { onDestroy } from 'svelte';
+
+	let fullTxt = 'unimplemented';
+	let cnt = 0;
+	$: load = (() => '_'.repeat(cnt % 2))();
+
+	const interval = setInterval(() => (cnt += 1), 500);
+
+	onDestroy(() => clearInterval(interval));
 </script>
 
 <div class="header">
-	<h1><a href="/">>kazenomori</a></h1>
+	<h1><a href="/">>kazenomori{load}</a></h1>
 	<nav>
 		<div class="navItem">
 			<a href="/about">

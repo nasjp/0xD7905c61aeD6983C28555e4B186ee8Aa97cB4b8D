@@ -2,25 +2,63 @@
 	import { formatDate } from '$lib/date';
 	import type { PostDataSummary } from '$lib/domains/post';
 	export let frontMatter: PostDataSummary;
+
+	$: tag1 = frontMatter.tags.length > 0 ? frontMatter.tags[0] : '-';
+	$: tag2 = frontMatter.tags.length > 1 ? frontMatter.tags[1] : '-';
 </script>
 
 <div class="title">
 	<h3>{frontMatter.title}</h3>
-	<p class="frontMatter">category: {frontMatter.category}</p>
-	{#if frontMatter.tags.length > 0}
-		<p class="frontMatter">tags: {frontMatter.tags}</p>
-	{/if}
-	<p class="frontMatter">created: {formatDate(frontMatter.createdAt)}</p>
-	<p class="frontMatter">updated: {formatDate(frontMatter.updatedAt)}</p>
+</div>
+<div class="table">
+	<div class="row">
+		<div class="cell">1</div>
+		<div class="cell">category</div>
+		<div class="cell">{frontMatter.category}</div>
+		<div class="cell">-</div>
+	</div>
+	<div class="row">
+		<div class="cell">2</div>
+		<div class="cell">tags</div>
+		<div class="cell">{tag1}</div>
+		<div class="cell">{tag2}</div>
+	</div>
+	<div class="row">
+		<div class="cell">3</div>
+		<div class="cell">created</div>
+		<div class="cell">{formatDate(frontMatter.createdAt)}</div>
+		<div class="cell">-</div>
+	</div>
+	<div class="row">
+		<div class="cell">4</div>
+		<div class="cell">updated</div>
+		<div class="cell">{formatDate(frontMatter.updatedAt)}</div>
+		<div class="cell">-</div>
+	</div>
 </div>
 
 <style>
 	.title {
-		display: flexbox;
-		grid-template-rows: 1fr 1fr;
+		padding-left: 10px;
 	}
-	.frontMatter {
-		font-size: 12px;
-		text-align: end;
+
+	.table {
+		display: grid;
+		grid-template-columns: 30px auto auto auto;
+		border-top: solid 1px;
+	}
+
+	.row {
+		display: contents;
+	}
+
+	.cell {
+		padding: 4px;
+		text-align: center;
+		border-bottom: solid 1px;
+	}
+
+	.cell:not(:first-of-type) {
+		border-left: solid 1px;
 	}
 </style>

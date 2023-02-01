@@ -8,12 +8,5 @@
 {#each data.postSummaries as { slug, title, createdAt }}
 	<a href={`/posts/${slug}`}>
 		<PostTitle {title} {createdAt} />
-		<div class="border" />
 	</a>
 {/each}
-
-<style>
-	.border {
-		border-bottom: 1px solid;
-	}
-</style>

@@ -32,3 +32,8 @@ a:hover {
 	transition: all 0.5s;
 	filter: none;
 }
+
+/* .toc {
+	border-left: 1px solid;
+	border-bottom: 1px solid;
+} */

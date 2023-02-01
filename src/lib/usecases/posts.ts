@@ -10,7 +10,9 @@ import breaks from 'remark-breaks';
 import emoji from 'remark-emoji';
 import remark2rehype from 'remark-rehype';
 import rehypePrism from '@mapbox/rehype-prism';
+import rehypeSlug from 'rehype-slug';
 import html from 'rehype-stringify';
+import { toc } from '@jsdevtools/rehype-toc';
 import type { PostData, PostDataSummary } from '../domains/post';
 
 const processor = unified()
@@ -22,6 +24,8 @@ const processor = unified()
 	.use(emoji)
 	.use(remark2rehype)
 	.use(rehypePrism)
+	.use(rehypeSlug)
+	.use(toc)
 	.use(html);
 
 const postsDirectory = path.join(process.cwd(), 'posts');
@@ -56,18 +60,23 @@ const fetchPosts = async (): Promise<PostData[]> => {
 			const content = result.value.toString();
 
 			return {
-				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-non-null-asserted-optional-chain
-				slug: fileName.match(/_(.+)\.md$/)?.[1]!,
-				title,
-				category: category ?? 'none',
-				tags: tags ?? [],
-				createdAt: new Date(created_at),
-				updatedAt: new Date(updated_at),
-				content
+				post: {
+					// eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-non-null-asserted-optional-chain
+					slug: fileName.match(/_(.+)\.md$/)?.[1]!,
+					title,
+					category: category ?? 'none',
+					tags: tags ?? [],
+					createdAt: new Date(created_at),
+					updatedAt: new Date(updated_at),
+					content
+				},
+				published
 			};
 		});
 
-	const posts = await Promise.all(jobs);
+	const posts = (await Promise.all(jobs))
+		.filter((result) => result.published)
+		.map((result) => result.post);
 
 	postsCache = posts.sort((a, b) => {
 		if (a.createdAt < b.createdAt) {
