@@ -1,11 +1,22 @@
 :root {
+	--back-color: #ffffff;
 	--text-color: #000000;
 	--link-color: #3cb371;
-
-	max-width: 584px;
-	margin: 0 auto;
+	--smoke-color: #f5f5f5;
 
 	font-family: 'Space Mono', 'Noto Sans JP', sans-serif;
+}
+
+html {
+	overflow-x: auto;
+}
+
+body {
+	overflow-x: hidden;
+	max-width: 584px;
+	min-height: 100vh;
+	margin: 0 auto;
+	position: relative;
 }
 
 h1,
@@ -32,8 +43,3 @@ a:hover {
 	transition: all 0.5s;
 	filter: none;
 }
-
-/* .toc {
-	border-left: 1px solid;
-	border-bottom: 1px solid;
-} */

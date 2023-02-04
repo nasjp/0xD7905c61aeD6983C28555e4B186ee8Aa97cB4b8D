@@ -1,18 +1,19 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
-
-	let fullTxt = 'unimplemented';
-	let cnt = 0;
-	$: txt = (() => {
-		if (cnt > fullTxt.length) {
-			return fullTxt + '.'.repeat((cnt - 1) % 4);
-		}
-		return fullTxt.slice(0, cnt);
-	})();
-
-	const interval = setInterval(() => (cnt += 1), 300);
-
-	onDestroy(() => clearInterval(interval));
+	import { VirtualWindow } from '$lib/components';
 </script>
 
-<h1>{@html txt}</h1>
+<VirtualWindow headerTxt="notes" topPercent={25} leftPercent={25}>
+	<div class="vw"><p>$ work in progress</p></div>
+</VirtualWindow>
+
+<style>
+	.vw {
+		background: var(--smoke-color);
+		height: 100%;
+	}
+
+	.vw p {
+		margin: 0 auto;
+		padding: 5px;
+	}
+</style>

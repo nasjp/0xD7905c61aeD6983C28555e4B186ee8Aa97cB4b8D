@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { PostTitle } from '$lib/components';
+	import { PostTitle, Unimplemented } from '$lib/components';
 
 	export let data: PageData;
 </script>
@@ -12,3 +12,5 @@
 		<PostTitle {title} {createdAt} />
 	</a>
 {/each}
+
+<Unimplemented />

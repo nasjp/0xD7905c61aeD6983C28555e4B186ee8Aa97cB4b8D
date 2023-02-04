@@ -5,7 +5,13 @@
 	import { Header } from '$lib/components';
 </script>
 
-<Header />
-<main>
+<div class="wrap">
+	<Header />
 	<slot />
-</main>
+</div>
+
+<style>
+	.wrap {
+		margin: 10px;
+	}
+</style>
