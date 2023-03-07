@@ -11,7 +11,7 @@
 			const shiftY = e.clientY - node.getBoundingClientRect().top;
 
 			const moveAt = (e: MouseEvent) => {
-				node.style.left = e.pageX - shiftX - 584 + 'px';
+				node.style.left = e.pageX - shiftX + 'px';
 				node.style.top = e.pageY - shiftY + 'px';
 			};
 
@@ -23,7 +23,7 @@
 
 			document.addEventListener('mousemove', moveAt);
 
-			node.onmouseup = function () {
+			node.onmouseup = () => {
 				document.removeEventListener('mousemove', moveAt);
 				node.onmouseup = null;
 			};
@@ -54,7 +54,7 @@
 
 			document.addEventListener('touchmove', moveAt);
 
-			node.ontouchend = function () {
+			node.ontouchend = () => {
 				document.removeEventListener('touchmove', moveAt);
 				node.ontouchend = null;
 			};

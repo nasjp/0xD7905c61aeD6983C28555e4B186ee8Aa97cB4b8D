@@ -13,5 +13,10 @@
 <style>
 	.wrap {
 		margin: 10px;
+		max-width: 584px;
+		overflow-x: hidden;
+		min-height: 100vh;
+		margin: 0 auto;
+		position: relative;
 	}
 </style>

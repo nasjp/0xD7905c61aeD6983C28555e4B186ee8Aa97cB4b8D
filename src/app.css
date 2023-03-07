@@ -11,14 +11,6 @@ html {
 	overflow-x: auto;
 }
 
-body {
-	overflow-x: hidden;
-	max-width: 584px;
-	min-height: 100vh;
-	margin: 0 auto;
-	position: relative;
-}
-
 h1,
 h2,
 h3,
