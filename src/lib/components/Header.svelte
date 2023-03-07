@@ -10,7 +10,7 @@
 </script>
 
 <div class="header">
-	<h1><a href="/">0xD79...4b8D</a></h1>
+	<h1><a href="/">_0xD79...4b8D</a></h1>
 	<nav>
 		<div class="navItem">
 			<a href="/about">

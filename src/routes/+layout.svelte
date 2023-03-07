@@ -5,18 +5,20 @@
 	import { Header } from '$lib/components';
 </script>
 
-<div class="wrap">
-	<Header />
-	<slot />
+<div class="frame">
+	<div class="wrap">
+		<Header />
+		<slot />
+	</div>
 </div>
 
 <style>
+	.frame {
+		max-width: 584px;
+		margin: 0 auto;
+	}
+
 	.wrap {
 		margin: 10px;
-		max-width: 584px;
-		overflow-x: hidden;
-		min-height: 100vh;
-		margin: 0 auto;
-		position: relative;
 	}
 </style>
