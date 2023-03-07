@@ -5,7 +5,7 @@
 	export let data: PageData;
 </script>
 
-<h2>最新の記事({data.postSummaries.length}件)</h2>
+<h2>Latest({data.postSummaries.length})</h2>
 
 {#each data.postSummaries as { slug, title, createdAt }}
 	<a href={`/posts/${slug}`}>

@@ -2,7 +2,7 @@
 	import { VirtualWindow } from '$lib/components';
 </script>
 
-<VirtualWindow headerTxt="notes" topPercent={25} leftPercent={25}>
+<VirtualWindow headerTxt="notes" topPercent={20} leftPercent={13}>
 	<div class="vw"><p>$ work in progress</p></div>
 </VirtualWindow>
 
