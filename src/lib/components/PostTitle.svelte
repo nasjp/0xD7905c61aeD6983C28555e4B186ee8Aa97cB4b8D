@@ -15,10 +15,13 @@
 		display: flexbox;
 		grid-template-rows: 1fr 1fr;
 		border-left: 1px solid;
-		border-bottom: 1px solid;
+		border-right: 1px solid;
+		border-top: 1px solid;
 	}
+
 	.date {
 		font-size: 12px;
 		text-align: end;
+		padding-right: 10px;
 	}
 </style>
