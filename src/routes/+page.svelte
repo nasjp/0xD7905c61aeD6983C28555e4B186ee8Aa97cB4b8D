@@ -1,16 +1,63 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { PostTitle, Unimplemented } from '$lib/components';
-
-	export let data: PageData;
+	import { Button } from '$lib/components';
 </script>
 
-<h2>Latest({data.postSummaries.length})</h2>
+<div class="wrap">
+	<Button>
+		<div class="address">
+			<span>0xD7905c61aeD6983C28555e4B186ee8Aa97cB4b8D</span>
+		</div>
+	</Button>
+</div>
+<div class="wrap">
+	<Button>
+		<div class="art" />
+	</Button>
+</div>
+<div class="link_group">
+	<div class="wrap">
+		<Button>
+			<div class="link"><span>about me</span></div>
+		</Button>
+	</div>
+	<div class="wrap">
+		<Button>
+			<div class="link"><span>posts</span></div>
+		</Button>
+	</div>
+</div>
 
-{#each data.postSummaries as { slug, title, createdAt }}
-	<a href={`/posts/${slug}`}>
-		<PostTitle {title} {createdAt} />
-	</a>
-{/each}
+<style>
+	.wrap {
+		margin-bottom: 27px;
+	}
 
-<Unimplemented />
+	.address {
+		height: 48px;
+		display: grid;
+		justify-items: center;
+		align-items: center;
+		font-size: 12px;
+		font-weight: bold;
+	}
+
+	.art {
+		padding-top: 100%;
+	}
+
+	.link_group {
+		display: grid;
+		grid-template-columns: 5fr 4fr;
+		grid-column-gap: 27px;
+	}
+
+	.link {
+		height: 48px;
+		display: grid;
+		justify-items: center;
+		align-items: center;
+		font-size: 24px;
+		font-weight: bold;
+	}
+</style>
