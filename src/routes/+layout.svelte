@@ -16,6 +16,6 @@
 	}
 
 	.wrap {
-		margin: 10px;
+		margin: 27px;
 	}
 </style>

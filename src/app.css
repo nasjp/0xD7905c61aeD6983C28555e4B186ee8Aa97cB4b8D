@@ -6,6 +6,10 @@ html {
 	overflow-x: auto;
 }
 
+body {
+	margin: 0;
+}
+
 h1,
 h2,
 h3,
@@ -19,14 +23,6 @@ a:link,
 a:visited,
 a:active,
 a:hover {
-	color: var(--link-color);
-	filter: brightness(0.7);
-	transition: all 0.5s;
 	border: none;
 	text-decoration: none;
-}
-
-a:hover {
-	transition: all 0.5s;
-	filter: none;
 }

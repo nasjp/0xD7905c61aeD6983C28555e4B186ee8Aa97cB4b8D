@@ -30,7 +30,9 @@
 
 <style>
 	.wrap {
-		margin-bottom: 27px;
+		margin-top: 27px;
+		font-family: Helvetica;
+		font-weight: bold;
 	}
 
 	.address {
@@ -38,8 +40,7 @@
 		display: grid;
 		justify-items: center;
 		align-items: center;
-		font-size: 12px;
-		font-weight: bold;
+		font-size: 14px;
 	}
 
 	.art {
@@ -58,6 +59,5 @@
 		justify-items: center;
 		align-items: center;
 		font-size: 24px;
-		font-weight: bold;
 	}
 </style>
