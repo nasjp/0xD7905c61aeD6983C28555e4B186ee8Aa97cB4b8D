@@ -55,8 +55,7 @@ const fetchPosts = async (): Promise<PostData[]> => {
 			const fileContents = await fs.readFile(fullPath, 'utf8');
 
 			const result = await processor.process(fileContents);
-			const { title, category, tags, created_at, updated_at, published } =
-				result.data as unknown as FrontMatter;
+			const { title, created_at, published } = result.data as unknown as FrontMatter;
 			const content = result.value.toString();
 
 			return {
@@ -64,10 +63,7 @@ const fetchPosts = async (): Promise<PostData[]> => {
 					// eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-non-null-asserted-optional-chain
 					slug: fileName.match(/_(.+)\.md$/)?.[1]!,
 					title,
-					category: category ?? 'none',
-					tags: tags ?? [],
 					createdAt: new Date(created_at),
-					updatedAt: new Date(updated_at),
 					content
 				},
 				published
