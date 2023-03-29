@@ -29,6 +29,32 @@
 		padding-top: 100%;
 	}
 
+	.art:hover {
+		background-color: #e74c3c;
+		animation: bg-color 10s infinite;
+	}
+
+	@keyframes bg-color {
+		0% {
+			background-color: #e74c3c;
+		}
+		20% {
+			background-color: #f1c40f;
+		}
+		40% {
+			background-color: #1abc9c;
+		}
+		60% {
+			background-color: #3498db;
+		}
+		80% {
+			background-color: #9b59b6;
+		}
+		100% {
+			background-color: #e74c3c;
+		}
+	}
+
 	.link_group {
 		display: grid;
 		grid-template-columns: 5fr 4fr;

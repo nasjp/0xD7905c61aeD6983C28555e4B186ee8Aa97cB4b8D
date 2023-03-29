@@ -10,6 +10,7 @@
 		border: 5px solid black;
 		box-shadow: 5px 5px 0px black;
 		cursor: pointer;
+		user-select: none;
 	}
 
 	.button:hover {
