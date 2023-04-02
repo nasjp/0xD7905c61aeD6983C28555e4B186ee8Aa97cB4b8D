@@ -70,8 +70,8 @@
 			<rect x="0" y="600" width="100%" height="60" fill="#3bc5ec" />
 			<rect x="0" y="660" width="100%" height="90" fill="#edb858" />
 			<rect x="0" y="750" width="100%" height="800" fill="#5ab44f" />
-			<polygon points="0,1000 0,800 300,800 510,1000" stroke="#e74c3c" fill="#fff" />
-			<polygon points="0,1000 0,810 290,810 460,1000" stroke="#e74c3c" fill="#3bc5ec" />
+			<polygon points="0,1000 0,800 300,800 510,1000" fill="#fff" />
+			<polygon points="0,1000 0,810 290,810 460,1000" fill="#3bc5ec" />
 		</svg>
 	</Box>
 </Wrap>
