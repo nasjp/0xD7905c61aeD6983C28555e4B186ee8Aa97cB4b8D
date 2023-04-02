@@ -2,5 +2,23 @@
 	import { page } from '$app/stores';
 </script>
 
-<h1>I'm sorry</h1>
-<h2>🙇 {$page.status} {$page.error?.message}</h2>
+<div class="wrap line" />
+
+<h1 class="msg">💀</h1>
+
+<style>
+	.line {
+		border: 2.5px solid black;
+		box-shadow: 2.5px 0 0px black;
+	}
+
+	.wrap {
+		margin-top: 27px;
+		font-family: Helvetica;
+		font-weight: bold;
+	}
+
+	.msg {
+		margin-top: 27px;
+	}
+</style>

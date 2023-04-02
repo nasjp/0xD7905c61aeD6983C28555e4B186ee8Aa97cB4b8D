@@ -33,7 +33,5 @@
 		justify-items: center;
 		align-items: center;
 		font-size: 12px;
-		font-family: Helvetica;
-		font-weight: bold;
 	}
 </style>

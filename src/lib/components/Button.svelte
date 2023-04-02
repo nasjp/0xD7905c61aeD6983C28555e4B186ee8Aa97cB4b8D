@@ -1,7 +1,5 @@
 <div class="button">
-	<div class="inner">
-		<slot />
-	</div>
+	<slot />
 </div>
 
 <style>
