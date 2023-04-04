@@ -2,15 +2,32 @@
 	import '../app.css';
 	import 'prism-themes/themes/prism-one-light.css';
 	import { Button } from '$lib/components';
+
+	let hover = false;
 </script>
 
 <div class="frame">
 	<div class="wrap">
-		<Button>
-			<a href="/" class="address">
-				<span>0xD7905c61aeD6983C28555e4B186ee8Aa97cB4b8D</span>
-			</a>
-		</Button>
+		<div
+			on:mouseover={() => {
+				hover = true;
+			}}
+			on:mouseout={() => {
+				hover = false;
+			}}
+			on:focus={() => {
+				hover = true;
+			}}
+			on:blur={() => {
+				hover = false;
+			}}
+		>
+			<Button>
+				<a href="/" class="address">
+					<span>{hover ? '0xd79.eth' : '0xD7905c61aeD6983C28555e4B186ee8Aa97cB4b8D'}</span>
+				</a>
+			</Button>
+		</div>
 		<slot />
 	</div>
 </div>

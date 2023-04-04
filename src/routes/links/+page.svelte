@@ -6,9 +6,17 @@
 
 <Wrap>
 	<Button>
-		<a href="https://twitter.com/0xD79___4b8D" target="_blank" rel="noreferrer" class="link"
+		<a href="https://twitter.com/0xD790/" target="_blank" rel="noreferrer" class="link"
 			><span>twitter</span></a
 		>
+	</Button>
+</Wrap>
+
+<Wrap>
+	<Button>
+		<a href="https://scrapbox.io/0xd790/" target="_blank" rel="noreferrer" class="link">
+			<span>scrapbox</span>
+		</a>
 	</Button>
 </Wrap>
 
@@ -20,7 +28,7 @@
 			rel="noreferrer"
 			class="link"
 		>
-			<span>ethereum</span>
+			<span>etherscan</span>
 		</a>
 	</Button>
 </Wrap>

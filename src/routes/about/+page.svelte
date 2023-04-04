@@ -5,7 +5,7 @@
 <Line />
 
 <Wrap>
-	<h1>Hello</h1>
+	<p>under maintenance</p>
 </Wrap>
 
 <style>
